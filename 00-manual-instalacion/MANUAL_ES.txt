@@ -1,0 +1,182 @@
+============================================================
+MANUAL: DESINSTALAR PYTHON E INSTALAR LA VERSION CORRECTA
+(Python 3.13 + Visual Studio Code + Pygame, para Windows)
+============================================================
+
+Por que Python 3.13 y no la ultima version?
+Las versiones muy nuevas (como la 3.15) todavia no son compatibles
+con pygame y da error al instalarlo. La 3.13 funciona perfecta.
+
+
+------------------------------------------------------------
+PARTE 1: DESINSTALAR TODAS LAS VERSIONES DE PYTHON
+------------------------------------------------------------
+
+1. Pulsa la tecla Windows y escribe: Aplicaciones instaladas
+   (o ve a Configuracion > Aplicaciones > Aplicaciones instaladas).
+
+2. En el buscador de esa pantalla escribe: Python
+
+3. Desinstala TODO lo que aparezca. Para cada elemento pulsa los tres
+   puntos (...) > Desinstalar. Por ejemplo:
+      - Python 3.15 (o cualquier otra version)
+      - Python 3.13
+      - Python Launcher
+      - Python install manager
+
+4. (Opcional, limpieza extra) Borra estas carpetas si existen:
+      C:\Users\TU_USUARIO\AppData\Local\Python
+      C:\Users\TU_USUARIO\AppData\Local\Programs\Python
+   (AppData es una carpeta oculta. Pega la ruta en la barra del
+   Explorador de archivos y cambia TU_USUARIO por tu usuario.)
+
+5. Reinicia el ordenador.
+
+6. Comprueba que ya no queda nada. Abre CMD (tecla Windows, escribe
+   cmd, Enter) y escribe:
+
+      py --version
+
+   Debe decir que no se reconoce el comando (o que no hay Python).
+   Si todavia sale una version, repite el paso 3.
+
+NOTA: al desinstalar Python tambien se borra pygame, hay que
+volver a instalarlo (Parte 2, paso 7).
+
+
+------------------------------------------------------------
+PARTE 2: INSTALAR PYTHON 3.13
+------------------------------------------------------------
+
+1. Entra en esta pagina:
+
+      https://www.python.org/downloads/windows/
+
+2. Busca la version Python 3.13.x (la ultima que sea 3.13) y
+   descarga "Windows installer (64-bit)".
+   Si ves varias 3.13.x, coge la mas reciente. Evita las que
+   pongan "pre-release" o "rc".
+
+3. Abre el instalador. MUY IMPORTANTE, en la primera pantalla:
+
+      [x] Marca la casilla "Add python.exe to PATH"   (abajo del todo)
+
+   Despues pulsa "Install Now".
+
+4. Cuando termine, pulsa "Close". Si te sale un boton
+   "Disable path length limit", pulsalo tambien (es seguro).
+
+5. Cierra TODAS las ventanas de CMD y de VS Code que tengas abiertas.
+
+6. Abre un CMD nuevo y comprueba la version:
+
+      py -3.13 --version
+
+   Debe salir algo como:  Python 3.13.x
+
+7. Instala la libreria pygame (la que dibuja las animaciones):
+
+      py -3.13 -m pip install pygame
+
+   Al final debe poner:  Successfully installed pygame-2.x.x
+
+8. Prueba rapida de que todo funciona:
+
+      py -3.13 -c "import pygame; print('Todo OK')"
+
+   Debe salir "Todo OK" (y quiza un mensaje "Hello from the pygame
+   community", que es normal).
+
+SI DA PROBLEMAS:
+ - "py no se reconoce": reinstala Python y marca "Add python.exe to PATH".
+ - Error largo al instalar pygame: casi seguro estas usando una version
+   de Python demasiado nueva. Comprueba que usas "py -3.13" y no "py".
+
+
+------------------------------------------------------------
+PARTE 3: INSTALAR VISUAL STUDIO CODE
+------------------------------------------------------------
+
+1. Descarga VS Code (gratis) en:
+
+      https://code.visualstudio.com
+
+2. Instalalo con las opciones por defecto.
+
+3. Abre VS Code y pulsa Ctrl+Shift+X (Extensiones).
+
+4. Busca "Python" (el de Microsoft) y pulsa Instalar.
+
+5. Elegir la version de Python para que no salgan avisos amarillos:
+      - Pulsa Ctrl+Shift+P
+      - Escribe: Python: Select Interpreter
+      - Elige la que ponga Python 3.13.x
+
+
+------------------------------------------------------------
+PARTE 4: CREAR Y EJECUTAR UN PROGRAMA
+------------------------------------------------------------
+
+1. Crea una carpeta para tus proyectos (por ejemplo en el Escritorio,
+   llamada "yt") y, dentro, una carpeta por cada programa.
+
+2. En VS Code: Archivo > Abrir carpeta > elige la carpeta del
+   programa (o la carpeta "yt" con todos).
+
+3. Crea un archivo nuevo (icono de hoja con un +) con extension .py,
+   por ejemplo:  galaxia.py
+
+4. Pega el codigo y guarda con Ctrl+S.
+
+5. Abre la terminal: menu Terminal > Nueva terminal.
+
+6. Ejecuta el programa (cambia el nombre por el de tu archivo):
+
+      py -3.13 galaxia.py
+
+7. Para cerrar el programa pulsa la tecla Esc.
+
+
+------------------------------------------------------------
+COMANDOS UTILES DE LA TERMINAL
+------------------------------------------------------------
+
+   cd carpeta        Entra en una carpeta
+   cd ..             Sube una carpeta
+   cd ..\otra        Sube una y entra en "otra"
+   dir               Muestra lo que hay en la carpeta actual
+   Tab               Autocompleta el nombre de la carpeta/archivo
+
+
+------------------------------------------------------------
+TEXTO PARA LA MINI INTRO DEL VIDEO (EN INGLES)
+------------------------------------------------------------
+
+Version corta (unos 15 segundos):
+
+  "Before we start, you only need two free tools: Visual Studio Code
+   and Python 3.13. Important: use version 3.13, because newer
+   versions don't work with some libraries yet. Download links and a
+   step-by-step guide are in the description. Let's go!"
+
+Version para el video largo (tutorial):
+
+  "To follow this tutorial you need two things. First, Visual Studio
+   Code, a free code editor. Second, Python, version 3.13. When you
+   install Python, make sure you check the box that says 'Add
+   python.exe to PATH'. Then open a terminal and type: py -3.13 -m pip
+   install pygame. That installs the library we use for the
+   animations. Everything is free, and you don't need any previous
+   experience."
+
+Para la descripcion del video:
+
+  Tools you need (all free):
+  - Python 3.13: https://www.python.org/downloads/windows/
+  - Visual Studio Code: https://code.visualstudio.com
+  - Install Pygame: py -3.13 -m pip install pygame
+
+
+============================================================
+FIN DEL MANUAL
+============================================================
