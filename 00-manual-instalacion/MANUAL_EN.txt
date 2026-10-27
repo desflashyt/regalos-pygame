@@ -1,0 +1,185 @@
+============================================================
+MANUAL: UNINSTALL PYTHON AND INSTALL THE CORRECT VERSION
+(Python 3.13 + Visual Studio Code + Pygame, for Windows)
+============================================================
+
+Why Python 3.13 and not the latest version?
+Very new versions (like 3.15) are not compatible with pygame yet
+and you get an error when installing it. Version 3.13 works
+perfectly.
+
+
+------------------------------------------------------------
+PART 1: UNINSTALL ALL VERSIONS OF PYTHON
+------------------------------------------------------------
+
+1. Press the Windows key and type: Installed apps
+   (or go to Settings > Apps > Installed apps).
+
+2. In the search box on that screen, type: Python
+
+3. Uninstall EVERYTHING that appears. For each item click the three
+   dots (...) > Uninstall. For example:
+      - Python 3.15 (or any other version)
+      - Python 3.13
+      - Python Launcher
+      - Python install manager
+
+4. (Optional, extra cleanup) Delete these folders if they exist:
+      C:\Users\YOUR_USER\AppData\Local\Python
+      C:\Users\YOUR_USER\AppData\Local\Programs\Python
+   (AppData is a hidden folder. Paste the path into the File
+   Explorer address bar and replace YOUR_USER with your username.)
+
+5. Restart your computer.
+
+6. Check that nothing is left. Open CMD (Windows key, type cmd,
+   Enter) and type:
+
+      py --version
+
+   It should say the command is not recognized (or that there is
+   no Python). If a version still appears, repeat step 3.
+
+NOTE: uninstalling Python also deletes pygame, so you need to
+install it again (Part 2, step 7).
+
+
+------------------------------------------------------------
+PART 2: INSTALL PYTHON 3.13
+------------------------------------------------------------
+
+1. Go to this page:
+
+      https://www.python.org/downloads/windows/
+
+2. Find the latest Python 3.13.x version and download
+   "Windows installer (64-bit)".
+   If you see several 3.13.x versions, pick the most recent one.
+   Avoid any labeled "pre-release" or "rc".
+
+3. Open the installer. VERY IMPORTANT, on the first screen:
+
+      [x] Check the box "Add python.exe to PATH"   (at the bottom)
+
+   Then click "Install Now".
+
+4. When it finishes, click "Close". If you see a
+   "Disable path length limit" button, click it too (it is safe).
+
+5. Close ALL open CMD and VS Code windows.
+
+6. Open a new CMD and check the version:
+
+      py -3.13 --version
+
+   You should see something like:  Python 3.13.x
+
+7. Install the pygame library (the one that draws the animations):
+
+      py -3.13 -m pip install pygame
+
+   At the end it should say:  Successfully installed pygame-2.x.x
+
+8. Quick test to make sure everything works:
+
+      py -3.13 -c "import pygame; print('All OK')"
+
+   It should print "All OK" (and maybe a "Hello from the pygame
+   community" message, which is normal).
+
+IF YOU RUN INTO PROBLEMS:
+ - "py is not recognized": reinstall Python and check
+   "Add python.exe to PATH".
+ - Long error when installing pygame: you are almost certainly using
+   a Python version that is too new. Make sure you use "py -3.13"
+   and not just "py".
+
+
+------------------------------------------------------------
+PART 3: INSTALL VISUAL STUDIO CODE
+------------------------------------------------------------
+
+1. Download VS Code (free) at:
+
+      https://code.visualstudio.com
+
+2. Install it with the default options.
+
+3. Open VS Code and press Ctrl+Shift+X (Extensions).
+
+4. Search for "Python" (the one by Microsoft) and click Install.
+
+5. Select the Python version so no yellow warnings appear:
+      - Press Ctrl+Shift+P
+      - Type: Python: Select Interpreter
+      - Choose the one that says Python 3.13.x
+
+
+------------------------------------------------------------
+PART 4: CREATE AND RUN A PROGRAM
+------------------------------------------------------------
+
+1. Create a folder for your projects (for example on the Desktop,
+   called "yt") and, inside it, one folder for each program.
+
+2. In VS Code: File > Open Folder > choose the program's folder
+   (or the "yt" folder containing all of them).
+
+3. Create a new file (the page icon with a +) with a .py extension,
+   for example:  galaxy.py
+
+4. Paste the code and save with Ctrl+S.
+
+5. Open the terminal: menu Terminal > New Terminal.
+
+6. Run the program (replace the name with your file's name):
+
+      py -3.13 galaxy.py
+
+7. To close the program, press the Esc key.
+
+
+------------------------------------------------------------
+USEFUL TERMINAL COMMANDS
+------------------------------------------------------------
+
+   cd folder         Enter a folder
+   cd ..             Go up one folder
+   cd ..\other       Go up one folder and enter "other"
+   dir               Show what is in the current folder
+   Tab               Autocomplete the folder/file name
+
+
+------------------------------------------------------------
+TEXT FOR THE VIDEO MINI INTRO (IN ENGLISH)
+------------------------------------------------------------
+
+Short version (about 15 seconds):
+
+  "Before we start, you only need two free tools: Visual Studio Code
+   and Python 3.13. Important: use version 3.13, because newer
+   versions don't work with some libraries yet. Download links and a
+   step-by-step guide are in the description. Let's go!"
+
+Version for the long video (tutorial):
+
+  "To follow this tutorial you need two things. First, Visual Studio
+   Code, a free code editor. Second, Python, version 3.13. When you
+   install Python, make sure you check the box that says 'Add
+   python.exe to PATH'. Then open a terminal and type: py -3.13 -m pip
+   install pygame. That installs the library we use for the
+   animations. Everything is free, and you don't need any previous
+   experience."
+
+For the video description:
+
+  Tools you need (all free):
+  - Python 3.13: https://www.python.org/downloads/windows/
+  - Visual Studio Code: https://code.visualstudio.com
+  - Install Pygame: py -3.13 -m pip install pygame
+
+
+============================================================
+END OF MANUAL
+============================================================
